@@ -1,0 +1,17 @@
+{
+  "name": "integer-reader",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --exit"
+  },
+  "author": "pb10009",
+  "license": "MIT",
+  "keywords": [
+    "integer"
+  ],
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
