@@ -22,8 +22,14 @@ describe("Readable integer ja", () => {
 });
 
 describe("Readable integer ja", () => {
-  it("converts 209803 into 二十万九千八百三", () => {
-    assert.equal("二十万九千八百三", obj.read(209803, "ja"));
+  it("converts 1030 into 千三十", () => {
+    assert.equal("千三十", obj.read(1030, "ja"));
+  });
+});
+
+describe("Readable integer ja", () => {
+  it("converts 10209803 into 一千二十万九千八百三", () => {
+    assert.equal("一千二十万九千八百三", obj.read(10209803, "ja"));
   });
 });
 
