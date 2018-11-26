@@ -1,4 +1,4 @@
-# Readable Integer
+# Integer Reader
 ## Summary
 ## Usage
 ```javascript
