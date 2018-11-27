@@ -41,13 +41,12 @@ export class EnglishReader implements Readable {
         9: "billion",
         12: "trillion"
     };
-    private solve (target: number) {{
+    private solve (target: number) {
         if (target === 0) return "";
-        if (this.names[target]) return this.names[target]; // 既に登録済みの場合
-        if (target < 100) {
+        else if (this.names[target]) return this.names[target]; // 既に登録済みの場合
+        else if (target < 100) {
           // 2桁の場合
           this.names[target] = this.names[target - target%10] + " " + this.names[target%10];
-          return this.names[target];
         } else {
             /* 3桁以上の場合 */
             let digitLength = 2;
@@ -62,9 +61,8 @@ export class EnglishReader implements Readable {
             } else {
                 this.names[target] = [this.solve(parseInt((target / digitNum).toString())) + " " + this.digits[digitLength], this.solve(target % digitNum)].join(" and ");
             }
-            return this.names[target];
         }
-      }
+        return this.names[target];
     }
     read () {
         if (this.num === 0) {
