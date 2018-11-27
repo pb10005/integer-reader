@@ -6,10 +6,16 @@
   "scripts": {
     "test": "mocha --exit"
   },
-  "author": "pb10009",
+  "author": "pb10001",
   "license": "MIT",
   "keywords": [
     "integer"
+  ],
+  "files": [
+    "README.md",
+    "index.js",
+    "lib",
+    "package.json"
   ],
   "devDependencies": {
     "mocha": "^5.2.0"
