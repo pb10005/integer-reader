@@ -16,5 +16,5 @@ npm run watch
 ```
 ### テスト
 ```sh
-npm run test
+npm test
 ```
