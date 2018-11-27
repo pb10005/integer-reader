@@ -5,3 +5,16 @@
 ## 使い方
 ```javascript
 ```
+## 開発
+### ビルド
+```sh
+npm run build
+```
+### 自動コンパイル
+```sh
+npm run watch
+```
+### テスト
+```sh
+npm run test
+```

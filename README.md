@@ -5,3 +5,16 @@
 ```javascript
 
 ```
+## Development
+### build
+```sh
+npm run build
+```
+### watch
+```sh
+npm run watch
+```
+### test
+```sh
+npm run test
+```
