@@ -2,9 +2,11 @@
   "name": "integer-reader",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "mocha --exit"
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "npm run build && mocha --exit"
   },
   "author": "pb10001",
   "license": "MIT",
@@ -14,10 +16,14 @@
   "files": [
     "README.md",
     "index.js",
-    "lib",
+    "dist",
     "package.json"
   ],
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "typescript": "^3.1.6"
+  },
+  "dependencies": {
+    "@types/node": "^10.12.10"
   }
 }

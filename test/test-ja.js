@@ -1,6 +1,6 @@
 "use strict";
 
-const obj  = require("../lib/index");
+const obj  = require("../dist/index");
 const assert = require("assert");
 
 describe("Readable integer ja", () => {
