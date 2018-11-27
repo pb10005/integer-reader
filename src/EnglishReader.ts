@@ -1,5 +1,4 @@
 import { Readable } from "./Readable";
-import { Interface } from "readline";
 
 export class EnglishReader implements Readable {
     constructor (num: number) {

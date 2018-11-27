@@ -1,6 +1,4 @@
 import { Readable } from "./Readable";
-import { Interface } from "readline";
-
 
 export class JapaneseReader implements Readable {
     constructor (num: number) {
