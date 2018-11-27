@@ -1,4 +1,4 @@
 export interface Readable {
     num: number;
-    read(): string; 
+    read(): string;
 }
