@@ -13,9 +13,9 @@ npm i integer-reader
 ### 使用
 ```javascript
 const reader = require('integer-reader');
-// 英語
+// English
 reader.read(150, "en"); // => one hundred and fifty
-//日本語
+// Japanese
 reader.read(150, "ja"); // => 百五十
 ```
 ## 開発
