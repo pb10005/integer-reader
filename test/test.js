@@ -9,6 +9,18 @@ describe("Readable integer default", () => {
   });
 });
 
+describe("Readable integer default", () => {
+  it("converts 153.6 into null", () => {
+    assert.equal(null, obj.read(153.6));
+  });
+});
+
+describe("Readable integer default", () => {
+  it("converts 'invalid input' into null", () => {
+    assert.equal(null, obj.read("invalid input"));
+  });
+});
+
 describe("Readable integer en", () => {
   it('converts 0 into zero', () => {
     assert.equal('zero', obj.read(0, "en"));
