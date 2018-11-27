@@ -6,6 +6,7 @@ export class JapaneseReader implements Readable {
     }
     num: number;
     private names = {
+        0: "",
         1: "一",
         2: "二",
         3: "三",
@@ -26,8 +27,8 @@ export class JapaneseReader implements Readable {
         16: "京"
     };
     private solve (target: number, depth: number) {
-        if (target === 0) return "";
-        if (this.names[target]) return this.names[target]; // 既に登録済みの場合
+        if (target === 0) {}
+        else if (this.names[target]) {} // 既に登録済みの場合
         else {
             /* 2桁以上の場合 */
             let d = 1;
@@ -43,8 +44,8 @@ export class JapaneseReader implements Readable {
                 if (digitLength < 3) res = "";
             }
             this.names[target] = [res + this.digits[digitLength], this.solve(target % digitNum, depth+1)].join("");
-            return this.names[target];
         }
+        return this.names[target];
     }
     read () {
         if (this.num === 0) {

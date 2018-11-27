@@ -6,6 +6,7 @@ export class EnglishReader implements Readable {
     }
     num: number;
     private names = {
+        0: "",
         1: "one",
         2: "two",
         3: "three",
@@ -42,8 +43,8 @@ export class EnglishReader implements Readable {
         12: "trillion"
     };
     private solve (target: number) {
-        if (target === 0) return "";
-        else if (this.names[target]) return this.names[target]; // 既に登録済みの場合
+        if (target === 0) {}
+        else if (this.names[target]) {} // 既に登録済みの場合
         else if (target < 100) {
           // 2桁の場合
           this.names[target] = this.names[target - target%10] + " " + this.names[target%10];
