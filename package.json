@@ -6,7 +6,9 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
-    "test": "npm run build && mocha --exit"
+    "test": "npm run build && mocha --exit",
+    "unit": "npm test",
+    "testreport": "npm run build && nyc --reporter=html mocha --exit"
   },
   "author": "pb10001",
   "license": "MIT",
@@ -25,6 +27,7 @@
     "typescript": "^3.1.6"
   },
   "dependencies": {
-    "@types/node": "^10.12.10"
+    "@types/node": "^10.12.10",
+    "nyc": "^13.1.0"
   }
 }
