@@ -24,10 +24,10 @@
   ],
   "devDependencies": {
     "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "typescript": "^3.1.6"
   },
   "dependencies": {
-    "@types/node": "^10.12.10",
-    "nyc": "^13.1.0"
+    "@types/node": "^10.12.10"
   }
 }
