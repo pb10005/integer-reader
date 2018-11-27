@@ -6,7 +6,17 @@
 ## 概要
 0以上の整数を入力して、読み方を返します。
 ## 使い方
+### インストール
+```sh
+npm i integer-reader
+```
+### 使用
 ```javascript
+const reader = require('integer-reader');
+// 英語
+reader.read(150, "en"); // => one hundred and fifty
+//日本語
+reader.read(150, "ja"); // => 百五十
 ```
 ## 開発
 ### ビルド
