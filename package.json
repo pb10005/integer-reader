@@ -1,6 +1,6 @@
 {
   "name": "integer-reader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Integer Reader is a JS library written in TypeScript which converts an integer into words.",
   "main": "./dist/index.js",
   "scripts": {
