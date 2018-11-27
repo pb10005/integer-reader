@@ -104,3 +104,9 @@ describe("Readable integer ja", () => {
     assert.equal("一億二千七百万一千三十", obj.read(127001030, "ja"));
   });
 });
+
+describe("Readable integer ja", () => {
+  it("converts 85935261518004224 into 八京五千九百三十五兆二千六百十五億一千八百万四千二百二十四", () => {
+    assert.equal("八京五千九百三十五兆二千六百十五億一千八百万四千二百二十四", obj.read(85935261518004224, "ja"));
+  });
+});

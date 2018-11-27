@@ -1,4 +1,5 @@
 import { Readable } from './Readable';
+import { runInThisContext } from 'vm';
 
 export class JapaneseReader implements Readable {
     public num: number;
@@ -22,6 +23,19 @@ export class JapaneseReader implements Readable {
         8: '億',
         12: '兆',
         16: '京',
+        20: '垓',
+        24: '秭',
+        28: '穣',
+        32: '溝',
+        36: '澗',
+        40: '正',
+        44: '載',
+        48: '極',
+        52: '恒河沙',
+        56: '阿僧祇',
+        60: '那由他',
+        64: '不可思議',
+        68: '無量大数',
     };
     constructor(num: number) {
         this.num = num;
@@ -29,8 +43,11 @@ export class JapaneseReader implements Readable {
     public read() {
         if (this.num === 0) {
             return '〇';
-        } else {
+        } else if (this.num > 0) {
+            console.log(this.num.toString());
             return this.solve(this.num, 0);
+        } else {
+            return null;
         }
     }
     private solve(target: number, depth: number) {
@@ -39,11 +56,11 @@ export class JapaneseReader implements Readable {
             let d = 1;
 
             /* 桁数を求める */
-            while (target >= parseInt(Math.pow(10, d).toString(), 10)) { d++; }
+            while (target >= Math.floor(Math.pow(10, d))) { d++; }
             d--;
             const digitLength: number = d > 4 ? d - d % 4 : d;
-            const digitNum: number = parseInt(Math.pow(10, digitLength).toString(), 10); // numを超えない最大の10のべき乗
-            let res: string = this.solve(parseInt((target / digitNum).toString(), 10), depth + 1); // 一番上の桁
+            const digitNum: number = Math.floor(Math.pow(10, digitLength)); // numを超えない最大の10のべき乗
+            let res: string = this.solve(Math.floor(target / digitNum), depth + 1); // 一番上の桁(四桁区切り)
             if (res === '一') {
                 if (d === 3 && depth === 0) { res = ''; }
                 if (digitLength < 3) { res = ''; }
