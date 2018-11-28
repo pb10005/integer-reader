@@ -1,11 +1,19 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-      "tslint:recommended"
-    ],
-    "rules": {
-      "quotemark": [true, "single"],
-      "indent": [true, "space", 2],
-      "object-literal-sort-keys": false
-    }
-  }
+  "defaultSeverity": "error",
+  "plugins": ["prettier"],
+  "extends": ["tslint:recommended"],
+  "rules": {
+    "quotemark": [true, "single"],
+    "indent": [true, "spaces", 2],
+    "trailing-comma": false,
+    "object-literal-sort-keys": false,
+    "prettier": [
+      true,
+      {
+        "spaceWidth": 2,
+        "singleQuote": true
+      }
+    ]
+  },
+  "rulesDirectory": ["tslint-plugin-prettier"]
+}
