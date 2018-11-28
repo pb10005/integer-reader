@@ -39,17 +39,16 @@ export class JapaneseReader implements IReadable {
     constructor(num: number) {
         this.num = num;
     }
-    public read() {
+    public read(): string {
         if (this.num === 0) {
             return '〇';
         } else if (this.num > 0) {
-            console.log(this.num.toString());
             return this.solve(this.num, 0);
         } else {
             return null;
         }
     }
-    private solve(target: number, depth: number) {
+    private solve(target: number, depth: number): string {
         if (target !== 0 && !this.names[target]) {
             /* 2桁以上の場合 */
             let d = 1;

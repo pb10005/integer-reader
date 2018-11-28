@@ -6,7 +6,6 @@
     "rules": {
       "quotemark": [true, "single"],
       "indent": [true, "space", 2],
-      "object-literal-sort-keys": false,
-      "no-console": false
+      "object-literal-sort-keys": false
     }
   }
