@@ -44,6 +44,9 @@
       "src/*.ts",
       "src/**/*.ts"
     ],
+    "exclude": [
+      "src/IReadable.ts"
+    ],
     "extension": [
       ".ts"
     ],
