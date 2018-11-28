@@ -38,5 +38,24 @@
   },
   "dependencies": {
     "@types/node": "^10.12.10"
+  },
+  "nyc": {
+    "include": [
+      "src/*.ts",
+      "src/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "json",
+      "html",
+      "text"
+    ],
+    "sourceMap": true,
+    "all": true
   }
 }
