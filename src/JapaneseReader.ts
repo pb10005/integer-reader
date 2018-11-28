@@ -1,7 +1,6 @@
-import { Readable } from './Readable';
-import { runInThisContext } from 'vm';
+import { IReadable } from './IReadable';
 
-export class JapaneseReader implements Readable {
+export class JapaneseReader implements IReadable {
     public num: number;
     private names = {
         0: '',

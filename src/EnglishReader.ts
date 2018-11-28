@@ -1,6 +1,6 @@
-import { Readable } from './Readable';
+import { IReadable } from './IReadable';
 
-export class EnglishReader implements Readable {
+export class EnglishReader implements IReadable {
     public num: number;
     private names = {
         0: '',
@@ -45,8 +45,10 @@ export class EnglishReader implements Readable {
     public read() {
         if (this.num === 0) {
             return 'zero';
-        } else {
+        } else if (this.num > 0) {
             return this.solve(this.num);
+        } else {
+            return null;
         }
     }
     private solve(target: number) {
@@ -57,12 +59,12 @@ export class EnglishReader implements Readable {
             /* 3桁以上の場合 */
             let digitLength = 2;
             /* 桁数を求める */
-            while (target >= parseInt(Math.pow(10, digitLength).toString(), 10)) { digitLength++; }
+            while (target >= Math.floor(Math.pow(10, digitLength))) { digitLength++; }
             digitLength--;
             digitLength = digitLength > 3 ? digitLength - digitLength % 3 : digitLength;
 
-            const digitNum = parseInt(Math.pow(10, digitLength).toString(), 10);
-            const topSolution = this.solve(parseInt((target / digitNum).toString(), 10));
+            const digitNum = Math.floor(Math.pow(10, digitLength));
+            const topSolution = this.solve(Math.floor(target / digitNum));
             const restSolution = this.solve(target % digitNum);
             if (target % digitNum === 0) {
                 this.names[target] = topSolution + ' ' + this.digits[digitLength];

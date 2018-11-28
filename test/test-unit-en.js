@@ -14,3 +14,9 @@ describe("new EnglishReader(0).read()", () => {
         assert.equal("zero", new EnglishReader(0).read());
     });
 });
+
+describe("new EnglishReader(-1).read()", () => {
+    it("returns null", () => {
+        assert.equal(null, new EnglishReader(-1).read());
+    });
+});

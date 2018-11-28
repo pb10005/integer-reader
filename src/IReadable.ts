@@ -1,4 +1,4 @@
-export interface Readable {
+export interface IReadable {
     num: number;
     read(): string;
 }

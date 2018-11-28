@@ -14,3 +14,9 @@ describe("new JapaneesReader(0).read()", () => {
         assert.equal("〇", new JapaneseReader(0).read());
     });
 });
+
+describe("new JapaneesReader(-1).read()", () => {
+    it("returns null", () => {
+        assert.equal(null, new JapaneseReader(-1).read());
+    });
+});
