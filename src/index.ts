@@ -1,7 +1,7 @@
 import { EnglishReader } from './EnglishReader';
 import { JapaneseReader } from './JapaneseReader';
 
-export const read = (num: number, locale: string): string => {
+export const read = (num: number, locale?: string): string => {
   if (num !== Math.floor(num)) {
     return null;
   } else if (locale === 'en') {
