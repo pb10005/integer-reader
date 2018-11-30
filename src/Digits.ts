@@ -12,7 +12,7 @@ export class Digits {
       while (this.num >= Math.floor(Math.pow(10, d))) {
         d++;
       }
-      return d - 1;
+      return d;
     } else {
       return null;
     }

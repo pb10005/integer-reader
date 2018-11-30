@@ -51,17 +51,12 @@ export class ReadableJapaneseInteger implements IReadableInteger {
   }
   private solve(target: number, depth: number): string {
     if (target !== 0 && !this.names[target]) {
-      const d = new Digits(target).calcNum();
+      const d = new Digits(target).calcNum() - 1;
       const digitLength: number = d > 4 ? d - (d % 4) : d;
       const digitNum: number = Math.floor(Math.pow(10, digitLength)); // numを超えない最大の10のべき乗
       let res: string = this.solve(Math.floor(target / digitNum), depth + 1); // 一番上の桁(四桁区切り)
-      if (res === '一') {
-        if (d === 3 && depth === 0) {
-          res = '';
-        }
-        if (digitLength < 3) {
-          res = '';
-        }
+      if (res === '一' && ((d === 3 && depth === 0) || digitLength < 3)) {
+        res = '';
       }
       this.names[target] = [
         res + this.digits[digitLength],

@@ -55,13 +55,14 @@ export class ReadableEnglishInteger implements IReadableInteger {
   private solve(target: number): string {
     if (target === 0 || this.names[target]) {
       return this.names[target];
-    } else if (target < 100) {
+    }
+    if (target < 100) {
       // 2桁の場合
       this.names[target] =
         this.names[target - (target % 10)] + ' ' + this.names[target % 10];
     } else {
       /* 3桁以上の場合 */
-      let digitLength = new Digits(target).calcNum();
+      let digitLength = new Digits(target).calcNum() - 1;
       digitLength =
         digitLength > 3 ? digitLength - (digitLength % 3) : digitLength;
 
