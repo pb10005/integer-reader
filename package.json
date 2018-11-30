@@ -45,7 +45,7 @@
       "src/**/*.ts"
     ],
     "exclude": [
-      "src/IReadable.ts"
+      "src/IReadableInteger.ts"
     ],
     "extension": [
       ".ts"
