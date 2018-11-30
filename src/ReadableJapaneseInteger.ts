@@ -1,3 +1,4 @@
+import { Digits } from './Digits';
 import { IReadableInteger } from './IReadableInteger';
 
 export class ReadableJapaneseInteger implements IReadableInteger {
@@ -50,14 +51,7 @@ export class ReadableJapaneseInteger implements IReadableInteger {
   }
   private solve(target: number, depth: number): string {
     if (target !== 0 && !this.names[target]) {
-      /* 2桁以上の場合 */
-      let d = 1;
-
-      /* 桁数を求める */
-      while (target >= Math.floor(Math.pow(10, d))) {
-        d++;
-      }
-      d--;
+      const d = new Digits(target).calcNum();
       const digitLength: number = d > 4 ? d - (d % 4) : d;
       const digitNum: number = Math.floor(Math.pow(10, digitLength)); // numを超えない最大の10のべき乗
       let res: string = this.solve(Math.floor(target / digitNum), depth + 1); // 一番上の桁(四桁区切り)

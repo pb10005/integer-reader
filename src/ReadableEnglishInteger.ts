@@ -1,3 +1,4 @@
+import { Digits } from './Digits';
 import { IReadableInteger } from './IReadableInteger';
 
 export class ReadableEnglishInteger implements IReadableInteger {
@@ -60,12 +61,7 @@ export class ReadableEnglishInteger implements IReadableInteger {
         this.names[target - (target % 10)] + ' ' + this.names[target % 10];
     } else {
       /* 3桁以上の場合 */
-      let digitLength = 2;
-      /* 桁数を求める */
-      while (target >= Math.floor(Math.pow(10, digitLength))) {
-        digitLength++;
-      }
-      digitLength--;
+      let digitLength = new Digits(target).calcNum();
       digitLength =
         digitLength > 3 ? digitLength - (digitLength % 3) : digitLength;
 
