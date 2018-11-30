@@ -4,7 +4,7 @@
 
 ## Summary
 
-Integer Reader is a JS library written in TypeScript which converts an integer into words.
+A JS library written in TypeScript which converts an integer into words.
 
 ## Usage
 
