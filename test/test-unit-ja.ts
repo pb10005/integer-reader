@@ -1,21 +1,21 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
-import { JapaneseReader } from '../src/JapaneseReader';
+import { ReadableJapaneseInteger } from '../src/ReadableJapaneseInteger';
 
 describe('new EnglishReader(0).num', () => {
   it('returns 0', () => {
-    assert.equal(0, new JapaneseReader(0).num);
+    assert.equal(0, new ReadableJapaneseInteger(0).num);
   });
 });
 
 describe('new JapaneesReader(0).read()', () => {
   it('returns 〇', () => {
-    assert.equal('〇', new JapaneseReader(0).read());
+    assert.equal('〇', new ReadableJapaneseInteger(0).read());
   });
 });
 
 describe('new JapaneesReader(-1).read()', () => {
   it('returns null', () => {
-    assert.equal(null, new JapaneseReader(-1).read());
+    assert.equal(null, new ReadableJapaneseInteger(-1).read());
   });
 });

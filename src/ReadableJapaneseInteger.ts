@@ -1,6 +1,6 @@
-import { IReadable } from './IReadable';
+import { IReadableInteger } from './IReadableInteger';
 
-export class JapaneseReader implements IReadable {
+export class ReadableJapaneseInteger implements IReadableInteger {
   public num: number;
   private names = {
     0: '',

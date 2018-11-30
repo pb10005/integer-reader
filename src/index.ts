@@ -1,14 +1,17 @@
-import { EnglishReader } from './EnglishReader';
-import { JapaneseReader } from './JapaneseReader';
+import { IReadableInteger } from './IReadableInteger';
+import { ReadableEnglishInteger } from './ReadableEnglishInteger';
+import { ReadableJapaneseInteger } from './ReadableJapaneseInteger';
 
 export const read = (num: number, locale?: string): string => {
+  let reader: IReadableInteger;
   if (num !== Math.floor(num)) {
     return null;
   } else if (locale === 'en') {
-    return new EnglishReader(num).read();
+    reader = new ReadableEnglishInteger(num);
   } else if (locale === 'ja') {
-    return new JapaneseReader(num).read();
+    reader = new ReadableJapaneseInteger(num);
   } else {
-    return new EnglishReader(num).read();
+    reader = new ReadableEnglishInteger(num);
   }
+  return reader.read();
 };
