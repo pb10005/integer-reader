@@ -42,7 +42,7 @@ export class EnglishReader implements IReadable {
   constructor(num: number) {
     this.num = num;
   }
-  public read() {
+  public read(): string {
     if (this.num === 0) {
       return 'zero';
     } else if (this.num > 0) {
@@ -51,7 +51,7 @@ export class EnglishReader implements IReadable {
       return null;
     }
   }
-  private solve(target: number) {
+  private solve(target: number): string {
     if (target === 0 || this.names[target]) {
       return this.names[target];
     } else if (target < 100) {
