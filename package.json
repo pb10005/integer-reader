@@ -11,7 +11,7 @@
     "test": "npm run build && mocha --exit --require ts-node/register test/**/*.ts",
     "unit": "npm test",
     "testreport": "npm run build && nyc --reporter=html mocha --exit --require ts-node/register test/**/*.ts",
-    "typedoc": "typedoc --out ./docs/ ./src/"
+    "doc": "typedoc --out ./docs/ ./src/ && touch docs/.nojekyll"
   },
   "author": "pb10001",
   "license": "MIT",
